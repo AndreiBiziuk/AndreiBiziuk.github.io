@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.16">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Бизюк Андрей">
+
+<title>Web-сайт за 30 минут – Мой первый сайт</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3b80f028842cb3140031bab07a2dbae6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-1180d706f6551827e700389f769335f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Мой первый сайт</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Поиск"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Переключить навигацию" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./presentation.html" aria-current="page"> 
+<span class="menu-text">Сайт за 30 минут</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#введение" id="toc-введение" class="nav-link active" data-scroll-target="#введение"><strong>Введение</strong></a>
+  <ul class="collapse">
+  <li><a href="#важность-веб-сайтов-в-современном-мире" id="toc-важность-веб-сайтов-в-современном-мире" class="nav-link" data-scroll-target="#важность-веб-сайтов-в-современном-мире"><strong>Важность веб-сайтов в современном мире</strong></a></li>
+  <li><a href="#почему-важно-иметь-свой-веб-сайт" id="toc-почему-важно-иметь-свой-веб-сайт" class="nav-link" data-scroll-target="#почему-важно-иметь-свой-веб-сайт"><strong>Почему важно иметь свой веб-сайт</strong></a></li>
+  </ul></li>
+  <li><a href="#шаг-1-планирование" id="toc-шаг-1-планирование" class="nav-link" data-scroll-target="#шаг-1-планирование"><strong>Шаг 1: Планирование</strong></a>
+  <ul class="collapse">
+  <li><a href="#определение-целей-вашего-веб-сайта" id="toc-определение-целей-вашего-веб-сайта" class="nav-link" data-scroll-target="#определение-целей-вашего-веб-сайта">Определение целей вашего веб-сайта</a></li>
+  <li><a href="#определение-аудитории" id="toc-определение-аудитории" class="nav-link" data-scroll-target="#определение-аудитории"><strong>Определение аудитории</strong></a></li>
+  <li><a href="#создание-концепции-и-структуры" id="toc-создание-концепции-и-структуры" class="nav-link" data-scroll-target="#создание-концепции-и-структуры"><strong>Создание концепции и структуры</strong></a></li>
+  </ul></li>
+  <li><a href="#шаг-2-регистрация-домена-и-выбор-хостинга" id="toc-шаг-2-регистрация-домена-и-выбор-хостинга" class="nav-link" data-scroll-target="#шаг-2-регистрация-домена-и-выбор-хостинга"><strong>Шаг 2: Регистрация домена и выбор хостинга</strong></a>
+  <ul class="collapse">
+  <li><a href="#что-такое-домен-и-хостинг" id="toc-что-такое-домен-и-хостинг" class="nav-link" data-scroll-target="#что-такое-домен-и-хостинг"><strong>Что такое домен и хостинг?</strong></a></li>
+  <li><a href="#регистрация-домена" id="toc-регистрация-домена" class="nav-link" data-scroll-target="#регистрация-домена"><strong>Регистрация домена</strong></a></li>
+  <li><a href="#выбор-хостинг-провайдера" id="toc-выбор-хостинг-провайдера" class="nav-link" data-scroll-target="#выбор-хостинг-провайдера"><strong>Выбор хостинг-провайдера</strong></a></li>
+  <li><a href="#бесплатный-хостинг" id="toc-бесплатный-хостинг" class="nav-link" data-scroll-target="#бесплатный-хостинг">Бесплатный хостинг</a></li>
+  <li><a href="#регистрация-и-настройка-хостинга" id="toc-регистрация-и-настройка-хостинга" class="nav-link" data-scroll-target="#регистрация-и-настройка-хостинга"><strong>Регистрация и настройка хостинга</strong></a></li>
+  </ul></li>
+  <li><a href="#шаг-3-установка-cms-content-management-system" id="toc-шаг-3-установка-cms-content-management-system" class="nav-link" data-scroll-target="#шаг-3-установка-cms-content-management-system">Шаг 3: Установка CMS (Content Management System)</a>
+  <ul class="collapse">
+  <li><a href="#обзор-популярных-cms" id="toc-обзор-популярных-cms" class="nav-link" data-scroll-target="#обзор-популярных-cms"><strong>Обзор популярных CMS</strong></a></li>
+  </ul></li>
+  <li><a href="#создание-простого-сайта-на-примере-infinityfree" id="toc-создание-простого-сайта-на-примере-infinityfree" class="nav-link" data-scroll-target="#создание-простого-сайта-на-примере-infinityfree">Создание простого сайта на примере <strong>InfinityFree</strong></a>
+  <ul class="collapse">
+  <li><a href="#регистрация" id="toc-регистрация" class="nav-link" data-scroll-target="#регистрация">Регистрация</a></li>
+  <li><a href="#выбор-тарифного-плана" id="toc-выбор-тарифного-плана" class="nav-link" data-scroll-target="#выбор-тарифного-плана">Выбор тарифного плана</a></li>
+  <li><a href="#выбор-доменного-имени" id="toc-выбор-доменного-имени" class="nav-link" data-scroll-target="#выбор-доменного-имени">Выбор доменного имени</a></li>
+  <li><a href="#добавление-ssl-сертификата" id="toc-добавление-ssl-сертификата" class="nav-link" data-scroll-target="#добавление-ssl-сертификата">Добавление SSL сертификата</a></li>
+  <li><a href="#панель-управления-аккаунтом" id="toc-панель-управления-аккаунтом" class="nav-link" data-scroll-target="#панель-управления-аккаунтом">Панель управления аккаунтом</a></li>
+  <li><a href="#установщик-приложений" id="toc-установщик-приложений" class="nav-link" data-scroll-target="#установщик-приложений">Установщик приложений</a></li>
+  <li><a href="#установка-wordpress" id="toc-установка-wordpress" class="nav-link" data-scroll-target="#установка-wordpress">Установка WordPress</a></li>
+  <li><a href="#выбор-темы" id="toc-выбор-темы" class="nav-link" data-scroll-target="#выбор-темы">Выбор темы</a></li>
+  <li><a href="#панель-управления-сайтом" id="toc-панель-управления-сайтом" class="nav-link" data-scroll-target="#панель-управления-сайтом">Панель управления сайтом</a></li>
+  <li><a href="#страницы-сайта" id="toc-страницы-сайта" class="nav-link" data-scroll-target="#страницы-сайта">Страницы сайта</a></li>
+  <li><a href="#редактор-блоков-страницы" id="toc-редактор-блоков-страницы" class="nav-link" data-scroll-target="#редактор-блоков-страницы">Редактор блоков страницы</a></li>
+  <li><a href="#заключение" id="toc-заключение" class="nav-link" data-scroll-target="#заключение">Заключение</a></li>
+  </ul></li>
+  <li><a href="#спасибо-за-внимание" id="toc-спасибо-за-внимание" class="nav-link" data-scroll-target="#спасибо-за-внимание">Спасибо за внимание!</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Web-сайт за 30 минут</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Автор</div>
+    <div class="quarto-title-meta-contents">
+             <p>Бизюк Андрей </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="введение" class="level1">
+<h1><strong>Введение</strong></h1>
+<p>В эпоху цифровых технологий веб-сайт является мощным инструментом для коммуникации, представления информации и создания своего уникального виртуального пространства.</p>
+<section id="важность-веб-сайтов-в-современном-мире" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="важность-веб-сайтов-в-современном-мире"><strong>Важность веб-сайтов в современном мире</strong></h2>
+<ul>
+<li><p><strong>Онлайн-присутствие и видимость:</strong></p>
+<p>Сегодня люди все больше времени проводят в интернете. Ваш веб-сайт становится вашей визитной картой в цифровом мире, обеспечивая видимость и доступность вашей информации в любое время.</p></li>
+<li><p><strong>Личный или бизнес-бренд:</strong></p>
+<p>Веб-сайт - это ваш виртуальный бренд. Он помогает вам создать узнаваемый облик, предоставляя платформу для подробного представления ваших идей, продуктов или услуг.</p></li>
+<li><p><strong>Эффективная коммуникация:</strong></p>
+<p>Ваш веб-сайт дает вам возможность взаимодействовать с вашей аудиторией. Это место, где вы можете делиться информацией, новостями, обратной связью, что способствует укреплению отношений с посетителями.</p></li>
+<li><p><strong>Продажи и маркетинг:</strong></p>
+<p>Для бизнеса веб-сайт является мощным инструментом продаж и маркетинга. Он предоставляет возможность привлекать новых клиентов, предлагать продукты или услуги и устанавливать контакты с партнерами.</p></li>
+</ul>
+</section>
+<section id="почему-важно-иметь-свой-веб-сайт" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="почему-важно-иметь-свой-веб-сайт"><strong>Почему важно иметь свой веб-сайт</strong></h2>
+<ul>
+<li><p><strong>Контроль над информацией:</strong></p>
+<p>Владение своим веб-сайтом означает, что у вас полный контроль над представлением вашей информации, без зависимости от сторонних платформ.</p></li>
+<li><p><strong>Профессиональный облик:</strong></p>
+<p>Веб-сайт придает профессионализм и доверие. Посетители могут легко получить информацию о вас или вашем бизнесе, что важно для создания положительного первого впечатления.</p></li>
+<li><p><strong>Глобальная доступность:</strong></p>
+<p>С помощью веб-сайта ваш контент доступен по всему миру. Это открывает новые возможности для расширения своей аудитории и привлечения клиентов из разных уголков планеты.</p></li>
+<li><p><strong>Аналитика и улучшения:</strong></p>
+<p>Многие платформы предоставляют инструменты аналитики, которые позволяют отслеживать посещаемость и поведение посетителей. Это помогает вам лучше понимать свою аудиторию и улучшать ваш веб-сайт.</p></li>
+</ul>
+</section>
+</section>
+<section id="шаг-1-планирование" class="level1">
+<h1><strong>Шаг 1: Планирование</strong></h1>
+<section id="определение-целей-вашего-веб-сайта" class="level2">
+<h2 class="anchored" data-anchor-id="определение-целей-вашего-веб-сайта">Определение целей вашего веб-сайта</h2>
+<ul>
+<li><p><strong>Личный блог?</strong></p>
+<p>Вам нужна платформа для выражения своих мыслей и идей.</p></li>
+<li><p><strong>Корпоративный сайт?</strong></p>
+<p>Вы хотите представить свою компанию и привлечь клиентов.</p></li>
+<li><p><strong>Интернет-магазин?</strong></p>
+<p>Вашей целью может быть продажа товаров или услуг.</p></li>
+<li><p><strong>Портфолио?</strong></p>
+<p>Вы хотите показать свои работы или достижения.</p></li>
+</ul>
+</section>
+<section id="определение-аудитории" class="level2">
+<h2 class="anchored" data-anchor-id="определение-аудитории"><strong>Определение аудитории</strong></h2>
+<ul>
+<li><p><strong>Кто ваша целевая аудитория?</strong></p>
+<p>Возможно, вам нужно обратить внимание на определенный возрастной диапазон, интересы, профессии и т. д.</p></li>
+<li><p><strong>Что интересует вашу аудиторию?</strong></p>
+<p>Это поможет вам создать контент, который будет привлекательным для ваших посетителей.</p></li>
+<li><p><strong>Какие проблемы ваш веб-сайт может решить для аудитории?</strong></p>
+<p>Это поможет вам формировать контент и функциональность.</p></li>
+</ul>
+</section>
+<section id="создание-концепции-и-структуры" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="создание-концепции-и-структуры"><strong>Создание концепции и структуры</strong></h2>
+<ul>
+<li><p><strong>Выбор дизайна</strong></p>
+<p>Решите, каким образом вы хотите, чтобы ваш веб-сайт выглядел. Это может быть минималистичный стиль, яркие цвета, профессиональный вид и т. д.</p></li>
+<li><p><strong>Определение структуры</strong></p>
+<p>Создайте основные разделы и страницы вашего веб-сайта. Размышляйте о том, как организовать информацию, чтобы она была легкодоступной.</p></li>
+<li><p><strong>Функциональность</strong></p>
+<p>Определите, какие функции вам нужны (например, формы обратной связи, галереи, магазин и т. д.).</p></li>
+</ul>
+</section>
+</section>
+<section id="шаг-2-регистрация-домена-и-выбор-хостинга" class="level1">
+<h1><strong>Шаг 2: Регистрация домена и выбор хостинга</strong></h1>
+<section id="что-такое-домен-и-хостинг" class="level2">
+<h2 class="anchored" data-anchor-id="что-такое-домен-и-хостинг"><strong>Что такое домен и хостинг?</strong></h2>
+<ul>
+<li><p><strong>Домен</strong></p>
+<p>Домен - это уникальное имя вашего веб-сайта в интернете. Например, “www.example.com”. Домен служит человеко-читаемым адресом вашего веб-сайта.</p></li>
+<li><p><strong>Хостинг</strong></p>
+<p>Хостинг - это услуга, предоставляемая хостинг-провайдером, которая размещает ваш веб-сайт на сервере и делает его доступным для посетителей в Интернете. Это место, где хранятся файлы вашего веб-сайта, базы данных, и другие ресурсы.</p></li>
+</ul>
+</section>
+<section id="регистрация-домена" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="регистрация-домена"><strong>Регистрация домена</strong></h2>
+<ul>
+<li><p><strong>Выбор подходящего домена:</strong></p>
+<p>Выберите домен, который отражает цели вашего веб-сайта и легко запоминается. Используйте ключевые слова, связанные с вашей темой.</p></li>
+<li><p><strong>Выбор домена верхнего уровня:</strong></p>
+<p>Домен верхнего уровня (например, .com, .net, .org, .by, .ru и т.д.) влияет на восприятие доменного имени.</p></li>
+<li><p><strong>Регистрация:</strong></p>
+<p>Выберите регистратор доменов (сервис, предоставляющий услугу регистрации) и следуйте инструкциям для регистрации выбранного домена. Популярные регистраторы включают GoDaddy, Namecheap, и др.</p></li>
+</ul>
+</section>
+<section id="выбор-хостинг-провайдера" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="выбор-хостинг-провайдера"><strong>Выбор хостинг-провайдера</strong></h2>
+<ul>
+<li><p><strong>Требования к хостингу:</strong></p>
+<p>Решите, какие требования к хостингу у вас есть. Например, для небольших сайтов общего назначения обычно подходит общий хостинг, в то время как более крупные проекты могут требовать выделенного сервера.</p></li>
+<li><p><strong>Репутация и обзоры:</strong></p>
+<p>Исследуйте репутацию и обзоры хостинг-провайдеров. Надежность, скорость загрузки, техническая поддержка - все это важные факторы.</p></li>
+<li><p><strong>Сравнение тарифов:</strong></p>
+<p>Сравните тарифы различных хостинг-провайдеров. Убедитесь, что выбранный вами план соответствует вашим потребностям.</p></li>
+<li><p><strong>Техническая поддержка:</strong></p>
+<p>Уделяйте внимание уровню технической поддержки. Важно иметь возможность быстро решать технические проблемы.</p></li>
+</ul>
+</section>
+<section id="бесплатный-хостинг" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="бесплатный-хостинг">Бесплатный хостинг</h2>
+<p>Есть несколько бесплатных хостинг-провайдеров, которые предоставляют услуги для создания веб-сайтов. Однако, следует помнить, что бесплатные хостинги обычно имеют ограничения в объеме ресурсов, функциональности и поддержки. В зависимости от ваших потребностей, они могут быть подходящим вариантом для тестирования и начальных проектов. Вот несколько бесплатных хостинг-провайдеров:</p>
+<ul>
+<li><strong>GitHub Pages:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://pages.github.com/" class="uri">https://pages.github.com/</a></li>
+<li><em>Особенности:</em> Позволяет размещать статические веб-сайты прямо на GitHub. Отлично подходит для проектов с открытым исходным кодом.</li>
+</ul></li>
+<li><strong>Netlify:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://www.netlify.com/" class="uri">https://www.netlify.com/</a></li>
+<li><em>Особенности:</em> Предоставляет хостинг для статических сайтов, автоматическую сборку из репозиториев Git, CDN и многое другое.</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Heroku:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://www.heroku.com/" class="uri">https://www.heroku.com/</a></li>
+<li><em>Особенности:</em> Позволяет развертывать и хостить динамические веб-приложения. Отличается простым процессом развертывания.</li>
+</ul></li>
+<li><strong>InfinityFree:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://infinityfree.net/" class="uri">https://infinityfree.net/</a></li>
+<li><em>Особенности:</em> Предоставляет бесплатный хостинг с возможностью использования домена третьего уровня. Однако, есть ограничения по ресурсам.</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>000webhost:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://www.000webhost.com/" class="uri">https://www.000webhost.com/</a></li>
+<li><em>Особенности:</em> Предоставляет бесплатный хостинг с поддержкой PHP и MySQL. Ограничения на ресурсы могут быть, но это подходит для небольших проектов.</li>
+</ul></li>
+<li><strong>AwardSpace:</strong>
+<ul>
+<li><em>URL:</em> <a href="https://www.awardspace.com/" class="uri">https://www.awardspace.com/</a></li>
+<li><em>Особенности:</em> Предоставляет бесплатный хостинг с поддержкой PHP, MySQL, и других технологий. Есть ограничения по трафику и ресурсам.</li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Битрикс24</strong>
+<ul>
+<li><em>URL</em>: <a href="https://www.bitrix24.by/" class="uri">https://www.bitrix24.by/</a></li>
+<li><em>Особенности</em>: Бесплатное создание сайтов-визиток с использованием готовых шаблонов и конструктора.</li>
+</ul></li>
+</ul>
+</section>
+<section id="регистрация-и-настройка-хостинга" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="регистрация-и-настройка-хостинга"><strong>Регистрация и настройка хостинга</strong></h2>
+<ul>
+<li><p><strong>Регистрация</strong></p>
+<p>После выбора провайдера, зарегистрируйтесь на его сайте и выберите подходящий план хостинга.</p></li>
+<li><p><strong>Настройка домена</strong></p>
+<p>Если вы зарегистрировали домен отдельно, настройте его так, чтобы он указывал на сервер вашего хостинг-провайдера.</p></li>
+<li><p><strong>Установка CMS (по желанию)</strong></p>
+<p>Некоторые провайдеры предоставляют возможность установки CMS (например, WordPress) с помощью одного клика. Это упростит процесс создания вашего веб-сайта.</p></li>
+</ul>
+</section>
+</section>
+<section id="шаг-3-установка-cms-content-management-system" class="level1">
+<h1>Шаг 3: Установка CMS (Content Management System)</h1>
+<section id="обзор-популярных-cms" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="обзор-популярных-cms"><strong>Обзор популярных CMS</strong></h2>
+<ul>
+<li><strong>WordPress:</strong>
+<ul>
+<li><em>Описание:</em> Одна из самых популярных CMS, простая в использовании и обладающая огромным сообществом разработчиков и пользователей.</li>
+<li><em>Применение:</em> Личные блоги, корпоративные сайты, интернет-магазины.</li>
+</ul></li>
+<li><strong>Joomla:</strong>
+<ul>
+<li><em>Описание:</em> Более сложная по сравнению с WordPress, но более гибкая. Подходит для более сложных веб-проектов.</li>
+<li><em>Применение:</em> Корпоративные веб-сайты, порталы, онлайн-журналы.</li>
+</ul></li>
+<li><strong>Drupal:</strong>
+<ul>
+<li><em>Описание:</em> Мощная CMS с расширенными возможностями настройки. Требует более продвинутых навыков.</li>
+<li><em>Применение:</em> Крупные корпоративные веб-проекты, социальные сети.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="создание-простого-сайта-на-примере-infinityfree" class="level1">
+<h1>Создание простого сайта на примере <strong>InfinityFree</strong></h1>
+<section id="регистрация" class="level2">
+<h2 class="anchored" data-anchor-id="регистрация">Регистрация</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="выбор-тарифного-плана" class="level2">
+<h2 class="anchored" data-anchor-id="выбор-тарифного-плана">Выбор тарифного плана</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="выбор-доменного-имени" class="level2">
+<h2 class="anchored" data-anchor-id="выбор-доменного-имени">Выбор доменного имени</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-6.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="добавление-ssl-сертификата" class="level2">
+<h2 class="anchored" data-anchor-id="добавление-ssl-сертификата">Добавление SSL сертификата</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="панель-управления-аккаунтом" class="level2">
+<h2 class="anchored" data-anchor-id="панель-управления-аккаунтом">Панель управления аккаунтом</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="установщик-приложений" class="level2">
+<h2 class="anchored" data-anchor-id="установщик-приложений">Установщик приложений</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="установка-wordpress" class="level2">
+<h2 class="anchored" data-anchor-id="установка-wordpress">Установка WordPress</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-10.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="выбор-темы" class="level2">
+<h2 class="anchored" data-anchor-id="выбор-темы">Выбор темы</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-12.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-13.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="панель-управления-сайтом" class="level2">
+<h2 class="anchored" data-anchor-id="панель-управления-сайтом">Панель управления сайтом</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-14.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="страницы-сайта" class="level2">
+<h2 class="anchored" data-anchor-id="страницы-сайта">Страницы сайта</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-15.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="редактор-блоков-страницы" class="level2">
+<h2 class="anchored" data-anchor-id="редактор-блоков-страницы">Редактор блоков страницы</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/paste-17.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="заключение" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="заключение">Заключение</h2>
+<p>Мы начали с определения целей вашего веб-сайта, прошли через выбор домена и хостинга, а также успешно установили Content Management System (CMS). Эти шаги помогли нам создать основы вашего веб-присутствия.</p>
+<section id="подсказки-для-дальнейшего-улучшения-и-развития" class="level4">
+<h4 class="anchored" data-anchor-id="подсказки-для-дальнейшего-улучшения-и-развития">Подсказки для дальнейшего улучшения и развития:</h4>
+<ul>
+<li><p><strong>Добавление контента:</strong></p>
+<p>Начните с добавления качественного контента, соответствующего вашим целям и интересам вашей аудитории.</p></li>
+<li><p><strong>Оптимизация для поисковых систем (SEO):</strong></p>
+<p>Используйте ключевые слова, создавайте уникальные мета-теги, чтобы улучшить видимость вашего сайта в поисковых системах.</p></li>
+<li><p><strong>Регулярное обновление:</strong></p>
+<p>Поддерживайте свой веб-сайт актуальным. Регулярно обновляйте контент, добавляйте новости, и следите за обратной связью.</p></li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>Анализ посещаемости:</strong></p>
+<p>Используйте инструменты аналитики для отслеживания посещаемости. Это позволит вам понять, какие страницы популярны, и как можно улучшить пользовательский опыт.</p></li>
+<li><p><strong>Мобильная оптимизация:</strong></p>
+<p>Убедитесь, что ваш веб-сайт отображается корректно на мобильных устройствах. Мобильная оптимизация становится все более важной.</p></li>
+<li><p><strong>Безопасность:</strong></p>
+<p>Соблюдайте базовые меры безопасности, такие как регулярное обновление CMS и плагинов, использование надежных паролей, и резервное копирование данных.</p></li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>Социальные сети:</strong></p>
+<p>Интегрируйте свой веб-сайт с социальными сетями. Это поможет вам расширить свою аудиторию и лучше взаимодействовать с посетителями.</p></li>
+<li><p><strong>Обратная связь:</strong></p>
+<p>Активно собирайте обратную связь от посетителей. Это может быть ключевым инструментом для улучшения вашего веб-сайта.</p></li>
+</ul>
+<hr>
+<p>Надеюсь, что эта лекция вдохновила вас создать ваш веб-сайт и помогла разобраться с основами. Помните, что веб-сайт - это постоянно развивающийся процесс, и ваш творческий подход может сделать его уникальным и успешным. Удачи в создании вашего веб-пространства!</p>
+</section>
+</section>
+</section>
+<section id="спасибо-за-внимание" class="level1">
+<h1>Спасибо за внимание!</h1>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Скопировано");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Скопировано");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
